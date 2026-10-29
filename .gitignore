@@ -1,0 +1,8 @@
+# export desain klien dan bahan mentah (tidak dipakai di situs)
+0*.html
+*-export.html
+images/
+# file sementara
+node_modules/
+.DS_Store
+Thumbs.db

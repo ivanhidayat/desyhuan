@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Undangan Tasyakuran &amp; Resepsi · Desy &amp; Huan</title>
+  <meta name="description" content="Undangan Tasyakuran &amp; Resepsi Pernikahan Desy &amp; Huan — Windunegara, Wangon, Banyumas, 24–26 November 2026." />
+  <meta property="og:title" content="Undangan · Desy &amp; Huan" />
+  <meta property="og:description" content="Tasyakuran &amp; Resepsi Pernikahan, 24–26 November 2026 · Windunegara, Wangon, Banyumas" />
+  <meta property="og:image" content="assets/video/cover-last.jpg" />
+  <meta name="theme-color" content="#FFFFFF" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/video/cover-poster.jpg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="is-locked">
+  <!-- Ikon (lucide) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-mail-open" viewBox="0 0 24 24"><path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z"/><path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-calendar-heart" viewBox="0 0 24 24"><path d="M3 10h18V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h7"/><path d="M8 2v4"/><path d="M16 2v4"/><path d="M21.29 14.7a2.43 2.43 0 0 0-2.65-.52c-.3.12-.57.3-.8.53l-.34.34-.35-.34a2.43 2.43 0 0 0-2.65-.53c-.3.12-.56.3-.79.53-.95.94-1 2.53.2 3.74L17.5 22l3.6-3.55c1.2-1.21 1.14-2.8.19-3.74Z"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></symbol>
+    <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-navigation" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+  </svg>
+
+  <!-- ============ COVER ============ -->
+  <section id="cover" class="cover" aria-label="Sampul undangan">
+    <video id="coverVideo" class="cover__video" autoplay muted playsinline preload="auto"
+           poster="assets/video/cover-poster.jpg" aria-hidden="true" tabindex="-1">
+      <source src="assets/video/cover.mp4" type="video/mp4" />
+    </video>
+    <div class="cover__fade" aria-hidden="true"></div>
+
+    <header class="cover__head">
+      <p class="eyebrow cover-in" style="--d:300ms" data-anim="down">UNDANGAN TASYAKURAN</p>
+      <h1 class="cover__names cover-in" style="--d:600ms" data-anim="zoom">Desy &amp; Huan</h1>
+      <p class="cover__host cover-in" style="--d:900ms" data-anim="up">Hormat Kami, Bpk. Kuswantoro &amp; Ibu Maria Indriyani</p>
+    </header>
+
+    <div class="cover__card" id="coverCard">
+      <p class="cover__to">Kepada Yth.<br />Bapak/Ibu/Saudara/i</p>
+      <p class="cover__guest" id="guestName">Tamu Undangan</p>
+      <p class="cover__note">*Mohon maaf apabila ada kesalahan dalam penulisan nama, gelar dan alamat.</p>
+      <button type="button" class="btn btn--pulse" id="btnOpen">
+        <svg class="ic"><use href="#i-mail-open"/></svg>
+        <span>Buka Undangan</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ ISI UNDANGAN ============ -->
+  <main id="main" class="page" aria-hidden="true">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__fade" aria-hidden="true"></div>
+      <div class="hero__text">
+        <p class="eyebrow reveal" data-anim="down" data-delay="200">TASYAKURAN &amp; RESEPSI PERNIKAHAN</p>
+        <h2 class="hero__title reveal" data-anim="zoom" data-delay="500">Undangan</h2>
+        <p class="hero__info reveal" data-anim="up" data-delay="800">
+          Selasa – Rabu, 24 – 25 November 2026<br />
+          Windunegara, RT 01 RW 04<br />
+          Kecamatan Wangon, Kab. Banyumas
+        </p>
+      </div>
+      <a href="#doa" class="scroll-hint reveal" data-anim="fade" data-delay="1200" aria-label="Gulir ke bawah">
+        <span>Gulir ke bawah</span>
+        <svg class="ic ic--gold float"><use href="#i-chevron-down"/></svg>
+      </a>
+    </section>
+
+    <!-- Doa -->
+    <section class="sec sec--cream" id="doa">
+      <div class="ornament reveal" data-anim="line" aria-hidden="true"><i></i><b></b><i></i></div>
+      <h3 class="script script--30 reveal" data-anim="up" data-delay="200">Ya Allah,</h3>
+      <p class="body-14 reveal" data-anim="up" data-delay="400">
+        Jika Engkau memperkenankan adik kami untuk membuka lembaran hidup baru, maka ijinkanlah kami menikahkan mereka.
+      </p>
+    </section>
+
+    <!-- Orang Tua + Countdown -->
+    <section class="sec sec--cream sec--gap14">
+      <p class="eyebrow reveal" data-anim="down">HORMAT KAMI</p>
+      <figure class="arch reveal" data-anim="zoom" data-delay="200">
+        <img src="assets/img/ortu.jpg" alt="Bpk. Kuswantoro dan Ibu Maria Indriyani" loading="lazy" width="700" height="1050" />
+      </figure>
+      <div class="host-names reveal" data-anim="up" data-delay="500">
+        <span>Bpk. Kuswantoro</span>
+        <span>Ibu Maria Indriyani</span>
+      </div>
+      <p class="caption reveal" data-anim="up" data-delay="700">Orang tua mempelai wanita</p>
+
+      <div class="countdown" id="countdown" aria-live="off">
+        <div class="cd reveal" data-anim="up" data-delay="0"><b data-cd="d">00</b><span>Hari</span></div>
+        <div class="cd reveal" data-anim="up" data-delay="150"><b data-cd="h">00</b><span>Jam</span></div>
+        <div class="cd reveal" data-anim="up" data-delay="300"><b data-cd="m">00</b><span>Menit</span></div>
+        <div class="cd reveal" data-anim="up" data-delay="450"><b data-cd="s">00</b><span>Detik</span></div>
+      </div>
+      <p class="cd-done" id="cdDone" hidden>Acara telah berlangsung</p>
+      <a class="btn btn--sm reveal" data-anim="zoom" data-delay="600" id="btnCalendar" target="_blank" rel="noopener">
+        <svg class="ic"><use href="#i-calendar-heart"/></svg>
+        <span>Simpan Tanggal</span>
+      </a>
+    </section>
+
+    <!-- Mempelai -->
+    <section class="sec sec--cream">
+      <div class="ornament reveal" data-anim="line" aria-hidden="true"><i></i><b></b><i></i></div>
+      <div class="person reveal" data-anim="left" data-delay="200">
+        <h3 class="script script--30">Desy Ayu Maghfiroh, S.M</h3>
+        <p class="body-13">Putri Bpk. Sukardi &amp; Ibu Khotimah</p>
+      </div>
+      <p class="dengan reveal" data-anim="zoom" data-delay="400">dengan</p>
+      <div class="person reveal" data-anim="right" data-delay="600">
+        <h3 class="script script--30">Muhamad Huan Muhani, S.M</h3>
+        <p class="body-13">Putra Bpk. Muhamad Sehat &amp; Ibu Marwiyah</p>
+      </div>
+    </section>
+
+    <!-- Acara -->
+    <section class="sec sec--white sec--px24">
+      <p class="body-13 reveal" data-anim="up">
+        Dengan segala kerendahan hati dan ungkapan syukur atas karunia Allah SWT, kami mengundang
+        Bapak/Ibu/Saudara/i untuk menghadiri Tasyakuran dan Resepsi Pernikahan adik kami yang akan
+        diselenggarakan pada:
+      </p>
+
+      <article class="event reveal" data-anim="up">
+        <h3 class="script script--32">Tasyakuran</h3>
+        <span class="event__line"></span>
+        <div class="event__row"><svg class="ic ic--gold"><use href="#i-calendar"/></svg><p>Selasa Kliwon – Rabu Manis<br />24 – 25 November 2026</p></div>
+        <div class="event__row"><svg class="ic ic--gold"><use href="#i-map-pin"/></svg><p>Desa Windunegara RT 1 RW 4<br />Kecamatan Wangon, Kab. Banyumas</p></div>
+      </article>
+
+      <article class="event reveal" data-anim="up">
+        <h3 class="script script--32">Akad Nikah</h3>
+        <span class="event__line"></span>
+        <div class="event__row"><svg class="ic ic--gold"><use href="#i-calendar"/></svg><p>Kamis, 26 November 2026</p></div>
+        <div class="event__row"><svg class="ic ic--gold"><use href="#i-timer"/></svg><p>Pukul 10.00 WIB</p></div>
+        <div class="event__row"><svg class="ic ic--gold"><use href="#i-map-pin"/></svg><p>Windunegara RT 01/04<br />Kecamatan Wangon, Kab. Banyumas</p></div>
+      </article>
+
+      <article class="event reveal" data-anim="up">
+        <h3 class="script script--32">Resepsi</h3>
+        <span class="event__line"></span>
+        <div class="event__row"><svg class="ic ic--gold"><use href="#i-calendar"/></svg><p>Kamis, 26 November 2026</p></div>
+        <div class="event__row"><svg class="ic ic--gold"><use href="#i-timer"/></svg><p>Pukul 11.00 WIB</p></div>
+        <div class="event__row"><svg class="ic ic--gold"><use href="#i-map-pin"/></svg><p>Windunegara RT 01/04<br />Kecamatan Wangon, Kab. Banyumas</p></div>
+      </article>
+    </section>
+
+    <!-- Denah -->
+    <section class="sec sec--cream sec--px24">
+      <h3 class="script script--40 reveal" data-anim="down">Denah Lokasi</h3>
+      <p class="body-13 reveal" data-anim="up" data-delay="100">Windunegara RT 01/04, Kec. Wangon, Kab. Banyumas</p>
+      <div class="map reveal" data-anim="zoom" data-delay="200">
+        <iframe id="mapFrame" title="Peta lokasi acara" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a class="map__link" id="mapOverlay" target="_blank" rel="noopener" aria-label="Buka lokasi di Google Maps"></a>
+      </div>
+      <ul class="landmarks">
+        <li class="reveal" data-anim="left" data-delay="400">Dari arah Wangon / Ajibarang</li>
+        <li class="reveal" data-anim="left" data-delay="550">Dekat Masjid Baiturrahman &amp; SDN 2 Windunegara</li>
+        <li class="reveal" data-anim="left" data-delay="700">Sekitar Balai Desa Windunegara &amp; PT. Semen Bima</li>
+      </ul>
+      <a class="btn btn--sm reveal" data-anim="up" data-delay="800" id="btnMaps" target="_blank" rel="noopener">
+        <svg class="ic"><use href="#i-navigation"/></svg>
+        <span>Buka Google Maps</span>
+      </a>
+    </section>
+
+    <!-- RSVP -->
+    <section class="sec sec--white sec--px24">
+      <h3 class="script script--42 reveal" data-anim="down">Ucapan &amp; RSVP</h3>
+      <p class="body-13 reveal" data-anim="up" data-delay="100">Berikan doa dan ucapan terbaik untuk kami.</p>
+      <form class="rsvp reveal" data-anim="up" data-delay="200" id="rsvpForm" novalidate>
+        <label class="sr-only" for="rsvpName">Nama</label>
+        <input class="field" id="rsvpName" name="nama" type="text" placeholder="Nama" autocomplete="name" maxlength="60" required />
+        <label class="sr-only" for="rsvpMsg">Ucapan &amp; doa</label>
+        <textarea class="field field--area" id="rsvpMsg" name="ucapan" placeholder="Ucapan &amp; doa" maxlength="500" required></textarea>
+        <fieldset class="attend">
+          <legend class="sr-only">Konfirmasi kehadiran</legend>
+          <label class="attend__opt">
+            <input type="radio" name="hadir" value="Hadir" checked />
+            <svg class="ic ic--on"><use href="#i-check"/></svg>
+            <span>Hadir</span>
+          </label>
+          <label class="attend__opt">
+            <input type="radio" name="hadir" value="Tidak Hadir" />
+            <svg class="ic ic--on"><use href="#i-x"/></svg>
+            <span>Tidak Hadir</span>
+          </label>
+        </fieldset>
+        <button type="submit" class="btn btn--block">Kirim Ucapan</button>
+        <p class="rsvp__msg" id="rsvpMsgOut" role="status" hidden></p>
+      </form>
+    </section>
+
+    <!-- Penutup -->
+    <section class="sec sec--cream sec--end">
+      <p class="body-14 reveal" data-anim="up">
+        Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk
+        memberikan do’a restu kepada kami sekeluarga.
+      </p>
+      <p class="hormat reveal" data-anim="up" data-delay="200">Hormat Kami,</p>
+      <p class="script script--30 reveal" data-anim="up" data-delay="400">Bpk. Kuswantoro &amp; Ibu Maria Indriyani</p>
+      <p class="turut reveal" data-anim="up" data-delay="600">Turut Mengundang, Segenap Keluarga</p>
+      <p class="end-note reveal" data-anim="up" data-delay="800">Mohon maaf apabila ada kesalahan dalam penulisan nama, gelar dan alamat.</p>
+    </section>
+  </main>
+
+  <!-- Musik: Janji Suci by Yovie & Nuno (assets/audio/music.mp3) -->
+  <!-- judul lagu: Janji Suci by Yovie & Nuno -->
+  <audio id="bgm" preload="auto" loop title="Janji Suci by Yovie &amp; Nuno"></audio>
+  <button type="button" class="music" id="btnMusic" aria-label="Putar/jeda musik: Janji Suci by Yovie &amp; Nuno" title="Janji Suci by Yovie &amp; Nuno" hidden>
+    <svg class="ic"><use href="#i-music"/></svg>
+  </button>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

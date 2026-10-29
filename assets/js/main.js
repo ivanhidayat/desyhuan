@@ -32,9 +32,8 @@
   $('#btnCalendar').href = CAL_URL;
   $('#mapFrame').src = 'https://maps.google.com/maps?q=' + MAPS_COORD + '&z=16&hl=id&output=embed';
 
-  /* ===== VIDEO COVER: main sekali, freeze di frame akhir ===== */
-  var video = $('#coverVideo');
-  var lastFrame = 'assets/video/cover-last.jpg';
+  /* ===== COVER FOTO: efek scale 6 detik, lalu kartu muncul ===== */
+  var photo = $('#coverPhoto');
   var card = $('#coverCard');
   var cardShown = false;
   function showCard() {
@@ -43,24 +42,11 @@
     $('#cover').classList.add('cover--frozen');
     card.classList.add('is-ready');
   }
-  function freeze() {
-    try { video.currentTime = Math.max(0, video.duration - 0.05); } catch (e) {}
-    video.pause();
-    video.setAttribute('poster', lastFrame);
-    showCard();
-  }
-  video.addEventListener('ended', freeze);
   if (reduce) {
-    video.removeAttribute('autoplay');
-    video.style.display = 'none';
     showCard();
   } else {
-    var p = video.play();
-    if (p && p.catch) p.catch(function () { video.setAttribute('poster', lastFrame); showCard(); });
-    // pengaman: kartu tetap muncul walau event 'ended' tidak datang
-    video.addEventListener('loadedmetadata', function () {
-      setTimeout(showCard, Math.ceil(video.duration * 1000) + 800);
-    });
+    photo.addEventListener('animationend', showCard);
+    setTimeout(showCard, 6800); /* pengaman bila animationend tidak datang */
   }
 
   /* ===== BUKA UNDANGAN ===== */

@@ -48,10 +48,15 @@ a { color: inherit; }
 }
 .cover.is-open { transform: translateY(-100%); opacity: 0; pointer-events: none; }
 .cover.is-gone { display: none; }
-.cover__video {
+.cover__photo {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; object-position: center 0%;
-  transform: scale(1.0);
+  object-fit: cover; object-position: 50% 50%;
+  transform-origin: 50% 50%;
+  animation: coverScale 6s cubic-bezier(.22,.61,.36,1) 0.2s both;
+}
+@keyframes coverScale {
+  from { transform: scale(1.12); }
+  to   { transform: scale(1); }
 }
 .cover__fade { position: absolute; inset: 0; pointer-events: none; }
 /* gradasi atas (terbaca saat video putar) */

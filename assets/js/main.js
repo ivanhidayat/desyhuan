@@ -3,6 +3,9 @@
 
   /* ===== KONFIGURASI ===== */
   var WA_NUMBER = '';                       // isi nomor WA (62xxxxxxxxxx) saat menyusul
+  var SUPABASE_URL = 'https://tppfwdgjbierlztkwszb.supabase.co';
+  var SUPABASE_KEY = 'sb_publishable_mkBY-liFRFsHeOtKK3pSEw__19K_-OH';
+  var WISH_TABLE = 'wishes_desyhuan';
   var MAPS_URL  = 'https://www.google.com/maps/place/7%C2%B027\'17.3%22S+109%C2%B004\'09.1%22E/@-7.454793,109.0666084,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-7.454793!4d109.0691833?hl=id&entry=ttu&g_ep=EgoyMDI2MTAyNy4wIKXMDSoASAFQAw%3D%3D';
   var MAPS_COORD = '-7.454793,109.0691833';
   var AKAD_END_TS = Date.parse('2026-11-26T10:00:00+07:00');
@@ -120,9 +123,47 @@
   tick();
   setInterval(tick, 1000);
 
-  /* ===== RSVP via WhatsApp ===== */
+  /* ===== UCAPAN & RSVP (Supabase, tabel wishes_desyhuan) ===== */
   var form = $('#rsvpForm');
   var out = $('#rsvpMsgOut');
+  var list = $('#wishList');
+  var sb = (window.supabase && SUPABASE_URL && SUPABASE_KEY)
+    ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function renderWish(w) {
+    var li = document.createElement('li');
+    li.className = 'wish';
+    li.innerHTML = '<b>' + esc(w.name) + '</b><small>' + esc(w.attendance) + '</small><p>' + esc(w.message) + '</p>';
+    return li;
+  }
+  function loadWishes() {
+    if (!sb || !list) return;
+    sb.from(WISH_TABLE).select('id,name,attendance,message,created_at')
+      .order('created_at', { ascending: false }).limit(50)
+      .then(function (r) {
+        if (!r.data) return;
+        list.innerHTML = '';
+        r.data.forEach(function (w) { list.appendChild(renderWish(w)); });
+      });
+  }
+  function listenWishes() {
+    if (!sb || !list) return;
+    sb.channel('wishes-live').on('postgres_changes',
+      { event: 'INSERT', schema: 'public', table: WISH_TABLE },
+      function (p) {
+        var empty = list.querySelector('.wish-empty');
+        if (empty) empty.remove();
+        list.insertBefore(renderWish(p.new), list.firstChild);
+      }).subscribe();
+  }
+  loadWishes();
+  listenWishes();
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var nama = $('#rsvpName').value.trim();
@@ -131,11 +172,20 @@
     if (!nama || !ucapan) {
       out.textContent = 'Mohon isi nama dan ucapan.'; out.hidden = false; return;
     }
-    if (!WA_NUMBER) {
-      out.textContent = 'Fitur kirim ucapan segera aktif.'; out.hidden = false; return;
+    if (!sb) {
+      out.textContent = 'Fitur kirim ucapan belum tersedia.'; out.hidden = false; return;
     }
-    var text = 'Nama: ' + nama + '\nKehadiran: ' + hadir + '\n\nUcapan & doa:\n' + ucapan;
-    window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    sb.from(WISH_TABLE).insert({ name: nama, attendance: hadir, message: ucapan || 'Tanpa pesan' })
+      .then(function (r) {
+        btn.disabled = false;
+        if (r.error) {
+          out.textContent = 'Gagal mengirim, coba lagi.'; out.hidden = false; return;
+        }
+        form.reset();
+        out.textContent = 'Terima kasih, ucapan sudah terkirim.'; out.hidden = false;
+      });
   });
 })();
 

@@ -291,3 +291,12 @@ a { color: inherit; }
 .bank__copy{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:0;border-radius:999px;background:#fef1eb;color:#755b00;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500;box-shadow:0 1px 2px rgba(0,0,0,.08);cursor:pointer}
 .bank__copy .material-symbols-outlined{font-size:15px}
 .bank__copy.is-done{background:#755b00;color:#fff}
+
+/* Ucapan (Supabase) */
+.wish-list{list-style:none;margin:20px auto 0;padding:0;width:100%;max-width:350px;display:flex;flex-direction:column;gap:12px;text-align:left}
+.wish{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:0 4px 12px rgba(0,0,0,.04)}
+.wish b{display:block;font-family:var(--f-sans);font-size:14px;color:var(--ink)}
+.wish small{display:inline-block;margin-top:2px;font-size:11px;letter-spacing:.06em;color:var(--gold);text-transform:uppercase}
+.wish p{margin:8px 0 0;font-size:13px;line-height:20px;color:var(--ink-2);white-space:pre-line;word-break:break-word}
+.wish-empty{font-size:13px;color:var(--ink-3);text-align:center;list-style:none}
+.rsvp__msg{font-size:13px;color:var(--gold);text-align:center}

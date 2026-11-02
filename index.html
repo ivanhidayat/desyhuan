@@ -11,6 +11,8 @@
   <meta name="theme-color" content="#FFFFFF" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,500&family=Roboto+Mono:wght@400;500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="assets/video/cover-last.jpg" />
   <link rel="stylesheet" href="assets/css/style.css?v=kado2" />
@@ -177,17 +179,35 @@
     <section class="sec sec--cream sec--px24" id="kado">
       <h3 class="script script--40 reveal" data-anim="down">Kado Digital</h3>
       <p class="body-13 reveal" data-anim="up" data-delay="100">Doa restu Anda merupakan karunia yang sangat berarti. Apabila berkenan memberi kado, dapat melalui:</p>
-      <div class="bank reveal" data-anim="up" data-delay="200">
-        <div class="bank__bank">Mandiri</div>
-        <div class="bank__name">Maria Indriyani</div>
-        <div class="bank__num" id="rek1">1800015836812</div>
-        <button type="button" class="btn btn--sm" data-copy="rek1">Salin Nomor</button>
-      </div>
-      <div class="bank reveal" data-anim="up" data-delay="300">
-        <div class="bank__bank">BCA</div>
-        <div class="bank__name">Kuswantoro</div>
-        <div class="bank__num" id="rek2">4240131998</div>
-        <button type="button" class="btn btn--sm" data-copy="rek2">Salin Nomor</button>
+      <div class="bank-stack">
+        <div class="bank reveal" data-anim="up" data-delay="200">
+          <div class="bank__top">
+            <span class="bank__chip"></span>
+            <span class="bank__badge"><span class="material-symbols-outlined">account_balance</span>BANK MANDIRI</span>
+          </div>
+          <div class="bank__mid">
+            <span class="bank__label">Bank Transfer</span>
+            <div class="bank__num" id="rek1">1800015836812</div>
+          </div>
+          <div class="bank__bottom">
+            <div><span class="bank__hold-label">Atas Nama</span><span class="bank__hold">MARIA INDRIYANI</span></div>
+            <button type="button" class="bank__copy" data-copy="rek1"><span class="material-symbols-outlined">content_copy</span><span class="bank__copy-text">Salin</span></button>
+          </div>
+        </div>
+        <div class="bank reveal" data-anim="up" data-delay="300">
+          <div class="bank__top">
+            <span class="bank__chip"></span>
+            <span class="bank__badge"><span class="material-symbols-outlined">account_balance</span>BANK BCA</span>
+          </div>
+          <div class="bank__mid">
+            <span class="bank__label">Bank Transfer</span>
+            <div class="bank__num" id="rek2">4240131998</div>
+          </div>
+          <div class="bank__bottom">
+            <div><span class="bank__hold-label">Atas Nama</span><span class="bank__hold">KUSWANTORO</span></div>
+            <button type="button" class="bank__copy" data-copy="rek2"><span class="material-symbols-outlined">content_copy</span><span class="bank__copy-text">Salin</span></button>
+          </div>
+        </div>
       </div>
     </section>
 

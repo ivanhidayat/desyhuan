@@ -272,8 +272,22 @@ a { color: inherit; }
   .cover { background: url('../video/cover-last.jpg') center / cover no-repeat; }
 }
 
-/* Kado Digital */
-.bank{margin:16px auto 0;width:100%;max-width:340px;box-sizing:border-box;padding:18px 20px;border-radius:18px;background:#fff;border:2px solid var(--gold);box-shadow:0 6px 18px rgba(0,0,0,.06);text-align:center}
-.bank__bank{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-.bank__name{margin-top:6px;font-size:16px;font-weight:600}
-.bank__num{margin:6px 0 12px;font-size:20px;letter-spacing:.08em;font-variant-numeric:tabular-nums}
+/* Kado Digital: kartu rekening (gaya Stitch: Montserrat, Playfair, Roboto Mono) */
+.bank-stack{display:flex;flex-direction:column;align-items:center;gap:20px;width:100%;margin-top:16px}
+.bank{position:relative;width:100%;max-width:350px;min-height:206px;padding:20px;border-radius:16px;background:#FFFFFF;border:2px solid #B08D4A;box-shadow:0 12px 30px rgba(201,162,39,.12);display:flex;flex-direction:column;justify-content:space-between;text-align:left;font-family:'Montserrat',system-ui,sans-serif;color:#201a17;overflow:hidden}
+.bank::before{content:'';position:absolute;inset:8px;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(201,162,39,.25);pointer-events:none}
+.bank > *{position:relative;z-index:1}
+.bank__top{display:flex;align-items:center;justify-content:space-between}
+.bank__chip{width:36px;height:28px;border-radius:4px;background:linear-gradient(135deg,#ffe08e,#755b00);box-shadow:0 1px 2px rgba(0,0,0,.15);position:relative}
+.bank__chip::after{content:'';position:absolute;left:5px;right:5px;top:50%;height:1px;background:rgba(255,255,255,.6);box-shadow:0 -5px 0 rgba(255,255,255,.6),0 5px 0 rgba(255,255,255,.6)}
+.bank__badge{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:#fef1eb;box-shadow:inset 0 0 0 1px rgba(201,162,39,.3);font-size:11px;font-weight:600;letter-spacing:.08em;color:#201a17}
+.bank__badge .material-symbols-outlined{font-size:16px;color:#755b00}
+.bank__mid{margin:12px 0}
+.bank__label{display:block;margin-bottom:4px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#7f7663}
+.bank__num{font-family:'Roboto Mono',monospace;font-size:18px;font-weight:500;letter-spacing:2px;color:#201a17}
+.bank__bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.bank__hold-label{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#7f7663}
+.bank__hold{display:block;margin-top:2px;font-size:14px;font-weight:600;letter-spacing:.04em}
+.bank__copy{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:0;border-radius:999px;background:#fef1eb;color:#755b00;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500;box-shadow:0 1px 2px rgba(0,0,0,.08);cursor:pointer}
+.bank__copy .material-symbols-outlined{font-size:15px}
+.bank__copy.is-done{background:#755b00;color:#fff}

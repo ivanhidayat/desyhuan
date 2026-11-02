@@ -145,7 +145,8 @@ document.querySelectorAll('[data-copy]').forEach(function (btn) {
     var el = document.getElementById(btn.getAttribute('data-copy'));
     if (!el) return;
     var text = el.textContent.trim();
-    var done = function () { btn.textContent = 'Tersalin'; setTimeout(function () { btn.textContent = 'Salin Nomor'; }, 1600); };
+    var txt = btn.querySelector('.bank__copy-text');
+    var done = function () { if (txt) txt.textContent = 'Tersalin'; btn.classList.add('is-done'); setTimeout(function () { if (txt) txt.textContent = 'Salin'; btn.classList.remove('is-done'); }, 1600); };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(done, function () { window.prompt('Salin nomor:', text); });
     } else {

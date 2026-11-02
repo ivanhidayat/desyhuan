@@ -32,7 +32,7 @@
   $('#btnCalendar').href = CAL_URL;
   $('#mapFrame').src = 'https://maps.google.com/maps?q=' + MAPS_COORD + '&z=16&hl=id&output=embed';
 
-  /* ===== COVER FOTO: efek scale 6 detik, lalu kartu muncul ===== */
+  /* ===== COVER FOTO: efek scale 3 detik, lalu kartu muncul ===== */
   var photo = $('#coverPhoto');
   var card = $('#coverCard');
   var cardShown = false;
@@ -46,7 +46,7 @@
     showCard();
   } else {
     photo.addEventListener('animationend', showCard);
-    setTimeout(showCard, 6800); /* pengaman bila animationend tidak datang */
+    setTimeout(showCard, 3800); /* pengaman bila animationend tidak datang */
   }
 
   /* ===== BUKA UNDANGAN ===== */
@@ -138,3 +138,18 @@
     window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
   });
 })();
+
+// Salin nomor rekening (kado digital)
+document.querySelectorAll('[data-copy]').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var el = document.getElementById(btn.getAttribute('data-copy'));
+    if (!el) return;
+    var text = el.textContent.trim();
+    var done = function () { btn.textContent = 'Tersalin'; setTimeout(function () { btn.textContent = 'Salin Nomor'; }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { window.prompt('Salin nomor:', text); });
+    } else {
+      window.prompt('Salin nomor:', text);
+    }
+  });
+});

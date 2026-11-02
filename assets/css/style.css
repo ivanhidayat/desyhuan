@@ -300,3 +300,7 @@ a { color: inherit; }
 .wish p{margin:8px 0 0;font-size:13px;line-height:20px;color:var(--ink-2);white-space:pre-line;word-break:break-word}
 .wish-empty{font-size:13px;color:var(--ink-3);text-align:center;list-style:none}
 .rsvp__msg{font-size:13px;color:var(--gold);text-align:center}
+
+/* Hero: nama mempelai di bawah judul */
+.hero__names{margin:6px 0 0;font-family:var(--f-serif,'Cormorant Garamond',serif);font-style:italic;font-size:26px;line-height:1.2;color:var(--gold);text-align:center}
+@media (min-width:768px){.hero__names{font-size:32px}}

@@ -10,7 +10,7 @@
   var MAPS_COORD = '-7.454793,109.0691833';
   var AKAD_END_TS = Date.parse('2026-11-26T10:00:00+07:00');
   var CAL_URL = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
-    '&text=' + encodeURIComponent('Akad & Resepsi Desy & Huan') +
+    '&text=' + encodeURIComponent('Tasyakuran & Resepsi Desy & Huan') +
     '&dates=20261126T030000Z/20261126T080000Z' +
     '&location=' + encodeURIComponent('-7.454793,109.0691833 (Windunegara RT 01/04, Wangon, Banyumas)');
 
